@@ -17,7 +17,7 @@
 Linux 下载
 
 ```
-sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/csznet/goForward/main/get.sh)"
+bash -c "$(curl -fsSL https://gitdl.cn/https://raw.githubusercontent.com/csznet/goForward/main/get.sh)"
 ```
 
 运行
@@ -66,7 +66,7 @@ TCP 无传输超时关闭
 **创建 Systemd 服务**
 
 ```
-sudo nano /etc/systemd/system/goForward.service
+nano /etc/systemd/system/goForward.service
 ```
 
 **输入内容**
@@ -76,7 +76,7 @@ sudo nano /etc/systemd/system/goForward.service
 Description=Start goForward on boot
 
 [Service]
-ExecStart=/full/path/to/your/goForward -pass 666
+ExecStart=/root/goForward -pass 666
 
 [Install]
 WantedBy=default.target
@@ -87,23 +87,23 @@ WantedBy=default.target
 **重新加载 Systemd 配置**
 
 ```
-sudo systemctl daemon-reload
+systemctl daemon-reload
 ```
 
 **启用服务**
 
 ```
-sudo systemctl enable goForward
+systemctl enable goForward
 ```
 
 **启动服务**
 
 ```
-sudo systemctl start goForward
+systemctl start goForward
 ```
 
 **检查状态**
 
 ```
-sudo systemctl status goForward.service
+systemctl status goForward.service
 ```
